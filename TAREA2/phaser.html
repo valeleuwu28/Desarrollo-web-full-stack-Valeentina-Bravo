@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+
+<script>
+  const config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    scene: {
+      create: create,
+      update: update, // 👈 IMPORTANTE: Añadir la función update
+    },
+  };
+
+  const game = new Phaser.Game(config);
+
+  function create() {
+    // Guardamos referencias en 'this' para usarlas en update
+    this.player = this.add.rectangle(400, 300, 50, 50, 0x00ff00);
+    this.cursors = this.input.keyboard.createCursorKeys();
+  }
+
+  function update() {
+    // Phaser llama a esta función automáticamente en cada frame
+
+    // Movimiento horizontal con flechas
+    if (this.cursors.left.isDown) {
+      this.player.x -= 3;
+    }
+    if (this.cursors.right.isDown) {
+      this.player.x += 3;
+    }
+
+    // Opcional: movimiento vertical con flechas arriba/abajo
+    if (this.cursors.up.isDown) {
+      this.player.y -= 3;
+    }
+    if (this.cursors.down.isDown) {
+      this.player.y += 3;
+    }
+  }
+</script>
