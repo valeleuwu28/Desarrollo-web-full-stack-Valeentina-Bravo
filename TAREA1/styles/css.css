@@ -1,0 +1,206 @@
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2.5s forwards;
+}
+
+.logo {
+  width: 220px;
+  height: auto;
+}
+
+/* texto VB */
+.vb {
+  font-size: 90px;
+  fill: none;
+  stroke: #db7fe4;
+  stroke-width: 1.5;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  font-family: "Playfair Display", serif;
+  animation: draw 2s ease forwards;
+}
+
+/* animaciones */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+    fill: #db7fe4;
+  }
+}
+
+@keyframes starAppear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: #181818;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 1000;
+}
+
+.logo-nav img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 1px;
+  background: #db7fe4;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #db7fe4;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background: #1e1e1e;
+  color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nombre {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 120px;
+}
+
+.nombre h3 {
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  color: #db7fe4;
+}
+
+.nombre h1 {
+  font-size: 80px;
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 4px;
+}
+
+.nombre p {
+  font-size: 18px;
+  color: #bfbfbf;
+  margin-top: 10px;
+}
+
+.botones {
+  position: absolute;
+  top: 80%;
+  left: 120px;
+  align-content: center;
+  display: flex;
+  gap: 20px;
+}
+
+.botones button {
+  background: transparent;
+  border: 1px solid #db7fe4;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botones a {
+  color: #db7fe4;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.botones button:hover {
+  background: #db7fe4;
+}
+
+.botones button:hover a {
+  color: #0d0d0d;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: rgb(255, 255, 255);
+  padding: 80px 10%;
+}
+
+.intro img {
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.parrafo-intro {
+  max-width: 600px;
+}
+
+.parrafo-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  justify-content: center;
+  color: #333;
+  font-weight: 300;
+}
